@@ -3,6 +3,7 @@ import cors from 'cors'
 import { userRouter } from "./Modules/User/user.controller.js"
 import { globalErrorHandling } from "./utils/error/index.js"
 import path from 'path'
+import { postRouter } from "./Modules/Post/post.controller.js"
 
 export const bootstrap = async (app, express) => {
     
@@ -17,6 +18,7 @@ export const bootstrap = async (app, express) => {
     app.get("/", (req, res) => res.status(200).json({msg: "Welcome to my SocialApp"}))
 
     app.use("/users", userRouter)
+    app.use("/post", postRouter)
 
     app.use(/(.*)/, (req, res) => {
         return next(new Error(`Invalid URL => ${req.originalUrl}`))

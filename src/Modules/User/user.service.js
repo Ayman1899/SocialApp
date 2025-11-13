@@ -16,9 +16,9 @@ export const signUp = asyncHandler(async (req, res, next) => {
         return next(new Error("Email already exists", { cause: 409 }))
     }
 
-    if(!req.file) {
-        return next(new Error("Please upload an image", { cause: 404 }))
-    }
+    // if(!req.file) {
+    //     return next(new Error("Please upload an image", { cause: 404 }))
+    // }
 
     // if(!req?.files) {
     //     return next(new Error("please upload at least an image", { cause: 404 }))

@@ -35,7 +35,8 @@ export const multerLocal = (customValidation = [], customPath = "Generals") => {
 }
 
 export const multerHost = (customValidation = []) => {
-
+    
+    
     const storage = multer.diskStorage({})
 
     function fileFilter(req, file, cb) {
